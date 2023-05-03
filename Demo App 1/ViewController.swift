@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var preferenceButtonView: UIView!
     
-    @IBOutlet weak var searchBarStackView: UIStackView!
+//    @IBOutlet weak var searchBarStackView: UIStackView!
     @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             searchBarView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.155),
             tableView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.845),
-            searchBarView.widthAnchor.constraint(equalTo: searchBarStackView.widthAnchor, multiplier: 0.8)
+//            searchBarView.widthAnchor.constraint(equalTo: searchBarStackView.widthAnchor, multiplier: 0.8)
         ])
         
     }
