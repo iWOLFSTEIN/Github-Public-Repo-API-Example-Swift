@@ -9,6 +9,9 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var subContainerRight: UIView!
+    @IBOutlet weak var programmingLangView: UIView!
+    @IBOutlet weak var subContainerLeft: UIView!
     @IBOutlet weak var profilePicView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomView: UIView!
@@ -37,6 +40,9 @@ class TableViewCell: UITableViewCell {
         profilePicView.layer.cornerRadius = 10
         let profileImageView = profilePicView.subviews.first as! UIImageView
         profileImageView.layer.cornerRadius = 10
+        subContainerLeft.layer.cornerRadius = 10
+        subContainerRight.layer.cornerRadius = 10
+        programmingLangView.layer.cornerRadius = 5
                 
         NSLayoutConstraint.activate([
             topView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.6),
