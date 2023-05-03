@@ -48,10 +48,21 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-2e-gHY">
                                                 <rect key="frame" x="325" y="60" width="40" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-wV-3CL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.96470588235294119" green="0.69803921568627447" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="NpS-wV-3CL" firstAttribute="leading" secondItem="g8n-2e-gHY" secondAttribute="leading" id="0fU-EY-wCD"/>
                                                     <constraint firstAttribute="height" constant="40" id="G74-df-p4m"/>
+                                                    <constraint firstItem="NpS-wV-3CL" firstAttribute="top" secondItem="g8n-2e-gHY" secondAttribute="top" id="Wau-WH-HzE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="NpS-wV-3CL" secondAttribute="bottom" id="bND-SG-vFc"/>
                                                     <constraint firstAttribute="width" constant="40" id="cc1-sG-iJs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NpS-wV-3CL" secondAttribute="trailing" id="mIg-wR-KCr"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -99,6 +110,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116.92307692307692" y="-2.1327014218009479"/>
+        </scene>
+        <!--Secondary View Controller-->
+        <scene sceneID="jOO-Qa-6Mv">
+            <objects>
+                <viewController storyboardIdentifier="SecondaryViewController" id="Qd5-fx-lOd" customClass="SecondaryViewController" customModule="Demo_App_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ahP-xP-20E">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gpM-Nl-KvJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="31E-BK-gA3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-Tg-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="-2"/>
         </scene>
     </scenes>
     <resources>
