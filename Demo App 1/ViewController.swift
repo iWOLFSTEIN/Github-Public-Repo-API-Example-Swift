@@ -18,6 +18,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // Create a new instance of UINavigationController with self as the root view controller
+          let navController = UINavigationController(rootViewController: self)
+
+          // Set the navigation controller as the root view controller of the window
+          if let window = UIApplication.shared.windows.first {
+            window.rootViewController = navController
+            window.makeKeyAndVisible()
+          }
         
         let textField = textFieldView.subviews.first as! UITextField
         textField.borderStyle = .none
@@ -47,7 +55,22 @@ class ViewController: UIViewController {
         ])
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        // Hide the navigation bar
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    @IBAction func navigateToPreferenceScreen(_ sender: UIButton) {
+//        let storyboard = UIStoryboard.init(name: <#T##String#>, bundle: <#T##Bundle?#>)
+//        let secondaryViewController = SecondaryViewController.instantiate(from: "Main")
+//        navigationController?.pushViewController(secondaryViewController, animated: true)
+        
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
+                    navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
 
 }
 

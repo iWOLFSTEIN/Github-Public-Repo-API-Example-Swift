@@ -9,13 +9,46 @@ import UIKit
 
 class SecondaryViewController: UIViewController {
 
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bodyView: UIView!
+    @IBOutlet weak var headView: UIView!
+    
+    @IBOutlet weak var applyButtonView: UIView!
+    @IBOutlet weak var clearButtonView: UIView!
+    let langArray: [String] = ["Python", "Interior Painting", "Electrician", "Inappropriate client behavior", "Gardener", "Carpenter", "House cleaning"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        let bottomBorder = CALayer()
+        bottomBorder.backgroundColor = CGColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
+        //UIColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
+        bottomBorder.frame = CGRect(x: 0, y: headView.frame.size.height - 1, width: headView.frame.size.width, height: 1)
+        headView.layer.addSublayer(bottomBorder)
+        
+        let tableView = bodyView.subviews.first as! UITableView
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "PreferrenceTableViewCell", bundle: nil), forCellReuseIdentifier: "preferrenceCell")
+        tableView.rowHeight = 55
+        
+        
+        clearButtonView.layer.cornerRadius = 10
+        applyButtonView.layer.cornerRadius = 10
+        
+        clearButtonView.layer.borderWidth = 1
+        clearButtonView.layer.borderColor = CGColor(red: 246/255, green: 178/255, blue: 51/255, alpha: 1.0)
+        
+
     }
     
-
+    @IBAction func apply(_ sender: UIButton) {
+    }
+    @IBAction func clear(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +59,20 @@ class SecondaryViewController: UIViewController {
     }
     */
 
+}
+
+extension SecondaryViewController: UITableViewDelegate, UITableViewDataSource {
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return langArray.count
+//    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return langArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "preferrenceCell", for: indexPath) as! PreferrenceTableViewCell
+        cell.languageLabel.text = langArray[indexPath.row]
+        return cell
+    }
 }
