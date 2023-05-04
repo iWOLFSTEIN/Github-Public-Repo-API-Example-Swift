@@ -9,10 +9,8 @@ import UIKit
 import SVGKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var preferenceButtonView: UIView!
     
     @IBOutlet weak var pbuttonImageView: UIImageView!
-    //    @IBOutlet weak var searchBarStackView: UIStackView!
     @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
@@ -44,9 +42,9 @@ class ViewController: UIViewController {
         
         
         
-    let pbuttonSvgImage = SVGKImage(named: "pbutton")
-    pbuttonImageView.image = pbuttonSvgImage?.uiImage
-        pbuttonImageView.backgroundColor = .red
+//    let pbuttonSvgImage = SVGKImage(named: "pbutton")
+//    pbuttonImageView.image = pbuttonSvgImage?.uiImage
+//    pbuttonImageView.layer.cornerRadius = 10
         
         
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -56,7 +54,7 @@ class ViewController: UIViewController {
 
         
         textFieldView.layer.cornerRadius = 10
-        preferenceButtonView.layer.cornerRadius = 10
+//        preferenceButtonView.layer.cornerRadius = 10
 
         
 //        NSLayoutConstraint.activate([

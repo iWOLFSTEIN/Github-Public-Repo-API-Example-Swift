@@ -23,11 +23,11 @@ class SecondaryViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let bottomBorder = CALayer()
-        bottomBorder.backgroundColor = CGColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
-        //UIColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
-        bottomBorder.frame = CGRect(x: 0, y: headView.frame.size.height - 1, width: headView.frame.size.width, height: 1)
-        headView.layer.addSublayer(bottomBorder)
+//        let bottomBorder = CALayer()
+//        bottomBorder.backgroundColor = CGColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
+//        bottomBorder.frame = CGRect(x: 0, y: headView.frame.size.height - 1, width: headView.frame.size.width, height: 1)
+//        headView.layer.addSublayer(bottomBorder)
+        
         
         let tableView = bodyView.subviews.first as! UITableView
         tableView.delegate = self
@@ -55,6 +55,16 @@ class SecondaryViewController: UIViewController {
         
 
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let bottomBorder = CALayer()
+        bottomBorder.backgroundColor = CGColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
+        bottomBorder.frame = CGRect(x: 0, y: headView.frame.size.height - 1, width: headView.frame.size.width, height: 1)
+        headView.layer.addSublayer(bottomBorder)
+    }
+
+
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
@@ -96,6 +106,8 @@ extension SecondaryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.languageLabel.text = langArray[indexPath.row]
         let uncheckedIcon = SVGKImage(named: "cce")
         cell.checkBoxImage.image = uncheckedIcon?.uiImage
+        
+        cell.selectionStyle = .none
         
         return cell
     }

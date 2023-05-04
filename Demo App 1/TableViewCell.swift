@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGKit
 
 class TableViewCell: UITableViewCell {
 
@@ -48,6 +49,20 @@ class TableViewCell: UITableViewCell {
             topView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.6),
             bottomView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.4),
         ])
+        
+        
+        let starSvg = SVGKImage(named: "star")
+        let personSvg = SVGKImage(named: "person")
+        let pathSvg = SVGKImage(named: "path")
+        
+        let starImageView = subContainerLeft.subviews.first as! UIImageView
+        starImageView.image = starSvg?.uiImage
+        
+        let personImageView = subContainerRight.subviews.first as! UIImageView
+        personImageView.image = personSvg?.uiImage
+        
+        let pathImageView = subContainerRight.subviews[2] as! UIImageView
+        pathImageView.image = pathSvg?.uiImage
     }
     
 }
