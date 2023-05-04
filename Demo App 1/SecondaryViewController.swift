@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SVGKit
 
 class SecondaryViewController: UIViewController {
 
+    @IBOutlet weak var crossButtonImageView: UIImageView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var headView: UIView!
@@ -41,12 +43,20 @@ class SecondaryViewController: UIViewController {
         clearButtonView.layer.borderWidth = 1
         clearButtonView.layer.borderColor = CGColor(red: 246/255, green: 178/255, blue: 51/255, alpha: 1.0)
         
+        
+        let crossSVG = SVGKImage(named: "cross")
+        crossButtonImageView.image = crossSVG?.uiImage
+        
 
     }
     
     @IBAction func apply(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+
     }
     @IBAction func clear(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     /*
@@ -73,6 +83,9 @@ extension SecondaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "preferrenceCell", for: indexPath) as! PreferrenceTableViewCell
         cell.languageLabel.text = langArray[indexPath.row]
+        let uncheckedIcon = SVGKImage(named: "cce")
+        cell.checkBoxImage.image = uncheckedIcon?.uiImage
+        
         return cell
     }
 }

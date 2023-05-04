@@ -22,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5G-QN-Fpo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="149.66666666666666"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-6a-Wqi">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 13360" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-6a-Wqi">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="149.66666666666666"/>
                                     </imageView>
                                 </subviews>
@@ -153,7 +153,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="image" width="480" height="171.33332824707031"/>
+        <image name="Rectangle 13360" width="327" height="159"/>
         <image name="pic" width="139" height="208.66667175292969"/>
     </resources>
 </document>
