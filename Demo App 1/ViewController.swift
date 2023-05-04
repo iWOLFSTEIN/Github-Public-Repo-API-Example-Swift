@@ -48,11 +48,11 @@ class ViewController: UIViewController {
         preferenceButtonView.layer.cornerRadius = 10
 
         
-        NSLayoutConstraint.activate([
-            searchBarView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.155),
-            tableView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.845),
-//            searchBarView.widthAnchor.constraint(equalTo: searchBarStackView.widthAnchor, multiplier: 0.8)
-        ])
+//        NSLayoutConstraint.activate([
+//            searchBarView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.155),
+//            tableView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.845),
+////            searchBarView.widthAnchor.constraint(equalTo: searchBarStackView.widthAnchor, multiplier: 0.8)
+//        ])
         
     }
     override func viewWillAppear(_ animated: Bool) {
