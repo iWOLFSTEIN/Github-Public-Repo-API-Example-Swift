@@ -4,7 +4,7 @@
 target 'Demo App 1' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SVGKit'
+  pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '2.x'
   # Pods for Demo App 1
 
 end
