@@ -46,23 +46,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-2e-gHY">
                                         <rect key="frame" x="325" y="60" width="40" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-wV-3CL">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2R-Ed-Kan">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                                                <connections>
-                                                    <action selector="navigateToPreferenceScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2MP-So-Q7e"/>
-                                                </connections>
-                                            </button>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.96470588235294119" green="0.69803921568627447" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="NpS-wV-3CL" firstAttribute="leading" secondItem="g8n-2e-gHY" secondAttribute="leading" id="0fU-EY-wCD"/>
                                             <constraint firstAttribute="height" constant="40" id="G74-df-p4m"/>
-                                            <constraint firstItem="NpS-wV-3CL" firstAttribute="top" secondItem="g8n-2e-gHY" secondAttribute="top" id="Wau-WH-HzE"/>
-                                            <constraint firstAttribute="bottom" secondItem="NpS-wV-3CL" secondAttribute="bottom" id="bND-SG-vFc"/>
+                                            <constraint firstAttribute="trailing" secondItem="T2R-Ed-Kan" secondAttribute="trailing" id="KMQ-CC-ci6"/>
+                                            <constraint firstAttribute="bottom" secondItem="T2R-Ed-Kan" secondAttribute="bottom" id="QMx-Bx-VzM"/>
                                             <constraint firstAttribute="width" constant="40" id="cc1-sG-iJs"/>
-                                            <constraint firstAttribute="trailing" secondItem="NpS-wV-3CL" secondAttribute="trailing" id="mIg-wR-KCr"/>
+                                            <constraint firstItem="T2R-Ed-Kan" firstAttribute="leading" secondItem="g8n-2e-gHY" secondAttribute="leading" id="lM9-HB-856"/>
+                                            <constraint firstItem="T2R-Ed-Kan" firstAttribute="top" secondItem="g8n-2e-gHY" secondAttribute="top" id="xNT-q1-4CZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -109,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="28A-7p-TvJ"/>
                     <connections>
+                        <outlet property="pbuttonImageView" destination="T2R-Ed-Kan" id="xRh-d0-Rsx"/>
                         <outlet property="preferenceButtonView" destination="g8n-2e-gHY" id="MEc-h8-IA3"/>
                         <outlet property="searchBarView" destination="5H6-7h-gvL" id="79q-6v-OwN"/>
                         <outlet property="tableView" destination="8D1-MA-yNT" id="Fyw-L2-Aiy"/>

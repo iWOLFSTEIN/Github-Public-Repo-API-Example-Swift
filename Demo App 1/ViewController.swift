@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SVGKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var preferenceButtonView: UIView!
     
-//    @IBOutlet weak var searchBarStackView: UIStackView!
+    @IBOutlet weak var pbuttonImageView: UIImageView!
+    //    @IBOutlet weak var searchBarStackView: UIStackView!
     @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
@@ -39,9 +41,18 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = 300
         tableView.separatorStyle = .none
-    
-//        preferenceButtonView.setContentHuggingPriority(.required, for: .horizontal)
-//        textFieldView.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
+        
+        
+    let pbuttonSvgImage = SVGKImage(named: "pbutton")
+    pbuttonImageView.image = pbuttonSvgImage?.uiImage
+        pbuttonImageView.backgroundColor = .red
+        
+        
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+    pbuttonImageView.isUserInteractionEnabled = true
+    pbuttonImageView.addGestureRecognizer(tapGesture)
+
 
         
         textFieldView.layer.cornerRadius = 10
@@ -55,6 +66,13 @@ class ViewController: UIViewController {
 //        ])
         
     }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
+                    navigationController?.pushViewController(destinationVC, animated: true)
+        
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -62,15 +80,6 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 
-    @IBAction func navigateToPreferenceScreen(_ sender: UIButton) {
-//        let storyboard = UIStoryboard.init(name: <#T##String#>, bundle: <#T##Bundle?#>)
-//        let secondaryViewController = SecondaryViewController.instantiate(from: "Main")
-//        navigationController?.pushViewController(secondaryViewController, animated: true)
-        
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
-                    navigationController?.pushViewController(destinationVC, animated: true)
-    }
-    
 
 }
 

@@ -47,8 +47,19 @@ class SecondaryViewController: UIViewController {
         let crossSVG = SVGKImage(named: "cross")
         crossButtonImageView.image = crossSVG?.uiImage
         
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        crossButtonImageView.isUserInteractionEnabled = true
+        crossButtonImageView.addGestureRecognizer(tapGesture)
+
+        
 
     }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     @IBAction func apply(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -88,4 +99,18 @@ extension SecondaryViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? PreferrenceTableViewCell {
+            if cell.isChecked {
+                let uncheckedIcon = SVGKImage(named: "cce")
+                cell.checkBoxImage.image = uncheckedIcon?.uiImage
+            } else {
+                let checkedIcon = SVGKImage(named: "ccm")
+                cell.checkBoxImage.image = checkedIcon?.uiImage
+            }
+            cell.isChecked = !cell.isChecked
+        }
+    }
+
+    
 }
