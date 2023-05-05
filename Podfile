@@ -6,6 +6,7 @@ target 'Demo App 1' do
   use_frameworks!
   pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '2.x'
   pod 'Alamofire'
+  pod 'Kingfisher'
   # Pods for Demo App 1
 
 end

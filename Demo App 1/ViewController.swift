@@ -8,6 +8,7 @@
 import UIKit
 import SVGKit
 import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    var activityIndicatorView: UIView?
     
     var repoList: [Repo]!
     
@@ -32,10 +34,12 @@ class ViewController: UIViewController {
         
         
         let api = GetGithubPublicRepoAPI()
+        showActivityIndicator()
         api.getAPI { [weak self] repositories in
             self?.repoList = repositories
             DispatchQueue.main.async {
                    self?.tableView.reloadData()
+                   self?.hideActivityIndicator()
                }
         }
         
@@ -55,10 +59,6 @@ class ViewController: UIViewController {
         
         
         
-//    let pbuttonSvgImage = SVGKImage(named: "pbutton")
-//    pbuttonImageView.image = pbuttonSvgImage?.uiImage
-//    pbuttonImageView.layer.cornerRadius = 10
-        
         
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
     pbuttonImageView.isUserInteractionEnabled = true
@@ -67,7 +67,6 @@ class ViewController: UIViewController {
 
         
         textFieldView.layer.cornerRadius = 10
-//        preferenceButtonView.layer.cornerRadius = 10
 
         
 //        NSLayoutConstraint.activate([
@@ -77,6 +76,23 @@ class ViewController: UIViewController {
 //        ])
         
     }
+    
+    func showActivityIndicator() {
+        activityIndicatorView = UIView(frame: self.view.bounds)
+        activityIndicatorView?.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = activityIndicatorView!.center
+        activityIndicator.startAnimating()
+        activityIndicatorView?.addSubview(activityIndicator)
+        self.view.addSubview(activityIndicatorView!)
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicatorView?.removeFromSuperview()
+        activityIndicatorView = nil
+    }
+
+
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
@@ -97,7 +113,12 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if let repoList {
+            return repoList.count
+        }
+        else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,9 +126,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         if let repoList {
-            print("Repo list count is \(repoList.count)")
+            let repo: Repo = repoList[indexPath.section]
+            let profilePicImageView = cell.profilePicView.subviews.first as! UIImageView
+            
+            
+            let imageUrl = URL(string: repo.avatar_url)!
+            let resource = ImageResource(downloadURL: imageUrl)
+            profilePicImageView.kf.indicatorType = .activity
+            profilePicImageView.kf.setImage(with: resource)
+            profilePicImageView.isUserInteractionEnabled = false
+            
+            
+            cell.nameLabel.text = repo.name
         }
         else {
             print("error is thrown")

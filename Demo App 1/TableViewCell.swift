@@ -10,6 +10,7 @@ import SVGKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subContainerRight: UIView!
     @IBOutlet weak var programmingLangView: UIView!
     @IBOutlet weak var subContainerLeft: UIView!
