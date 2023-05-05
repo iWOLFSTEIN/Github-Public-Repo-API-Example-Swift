@@ -7,6 +7,7 @@
 
 import UIKit
 import SVGKit
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -15,17 +16,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var repoList: [Repo]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // Create a new instance of UINavigationController with self as the root view controller
+        
           let navController = UINavigationController(rootViewController: self)
-
-          // Set the navigation controller as the root view controller of the window
           if let window = UIApplication.shared.windows.first {
             window.rootViewController = navController
             window.makeKeyAndVisible()
           }
+        
+        
+        let api = GetGithubPublicRepoAPI()
+        api.getAPI { [weak self] repositories in
+            self?.repoList = repositories
+            DispatchQueue.main.async {
+                   self?.tableView.reloadData()
+               }
+        }
+        
         
         let textField = textFieldView.subviews.first as! UITextField
         textField.borderStyle = .none
@@ -93,6 +106,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if let repoList {
+            print("Repo list count is \(repoList.count)")
+        }
+        else {
+            print("error is thrown")
+        }
         return cell
     }
 
