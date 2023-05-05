@@ -140,6 +140,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             
             
             cell.nameLabel.text = repo.name
+            
+            
+            let programmingLanguageLabel = cell.programmingLangView.subviews.first as! UILabel
+            programmingLanguageLabel.text = programmingLanguages[Int.random(in: 0..<7)]
         }
         else {
             print("error is thrown")
