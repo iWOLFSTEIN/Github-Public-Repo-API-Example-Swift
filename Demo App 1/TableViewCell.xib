@@ -86,9 +86,8 @@
                                             <constraint firstAttribute="height" constant="14" id="dRe-wi-pMd"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="203 Contributors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-gS-DLP">
-                                        <rect key="frame" x="25" y="1" width="90" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="203 Contributors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-gS-DLP">
+                                        <rect key="frame" x="24" y="1.6666666666666856" width="96" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -104,12 +103,16 @@
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Ome-BO-LfF" secondAttribute="bottom" constant="1.5" id="01l-Um-ssn"/>
+                                    <constraint firstItem="Ome-BO-LfF" firstAttribute="leading" secondItem="pz8-gS-DLP" secondAttribute="trailing" constant="1" id="0nS-EY-XKp"/>
                                     <constraint firstItem="sKb-0U-SFd" firstAttribute="top" secondItem="IQ4-xd-1uF" secondAttribute="top" constant="1.5" id="6a1-gG-f5m"/>
                                     <constraint firstAttribute="height" constant="17" id="7as-rz-KfC"/>
                                     <constraint firstItem="sKb-0U-SFd" firstAttribute="leading" secondItem="IQ4-xd-1uF" secondAttribute="leading" constant="5" id="JHI-CA-exM"/>
+                                    <constraint firstItem="pz8-gS-DLP" firstAttribute="top" secondItem="IQ4-xd-1uF" secondAttribute="top" constant="1.5" id="JI5-EK-Nji"/>
+                                    <constraint firstItem="pz8-gS-DLP" firstAttribute="leading" secondItem="sKb-0U-SFd" secondAttribute="trailing" constant="5" id="Xka-uA-mRD"/>
                                     <constraint firstAttribute="bottom" secondItem="sKb-0U-SFd" secondAttribute="bottom" constant="1.5" id="hIT-SQ-7Qn"/>
                                     <constraint firstItem="Ome-BO-LfF" firstAttribute="top" secondItem="IQ4-xd-1uF" secondAttribute="top" constant="1.5" id="mfT-Ni-vgO"/>
                                     <constraint firstAttribute="trailing" secondItem="Ome-BO-LfF" secondAttribute="trailing" constant="5" id="vlO-jw-0i6"/>
+                                    <constraint firstAttribute="bottom" secondItem="pz8-gS-DLP" secondAttribute="bottom" constant="1.5" id="wQg-9i-jRE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXx-2E-gsn">
@@ -145,9 +148,8 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="pEk-zA-3YT"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="170 today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-Bg-rj7">
-                                        <rect key="frame" x="25" y="2" width="51" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="170 today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-Bg-rj7">
+                                        <rect key="frame" x="24" y="2" width="76" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -156,9 +158,13 @@
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="K9i-do-8uu" firstAttribute="top" secondItem="KrW-zZ-ewh" secondAttribute="top" constant="2" id="0IY-7a-wEU"/>
+                                    <constraint firstAttribute="bottom" secondItem="oul-Bg-rj7" secondAttribute="bottom" constant="2" id="3CC-JK-JfA"/>
+                                    <constraint firstItem="oul-Bg-rj7" firstAttribute="top" secondItem="KrW-zZ-ewh" secondAttribute="top" constant="2" id="3Ky-1j-1eN"/>
                                     <constraint firstAttribute="bottom" secondItem="K9i-do-8uu" secondAttribute="bottom" constant="2" id="8Y0-u1-zvx"/>
+                                    <constraint firstItem="oul-Bg-rj7" firstAttribute="leading" secondItem="K9i-do-8uu" secondAttribute="trailing" constant="5" id="Aja-Qs-NAT"/>
                                     <constraint firstAttribute="width" constant="100" id="FKj-Z3-Gb4"/>
                                     <constraint firstItem="K9i-do-8uu" firstAttribute="leading" secondItem="KrW-zZ-ewh" secondAttribute="leading" constant="5" id="JPR-9g-9OC"/>
+                                    <constraint firstAttribute="trailing" secondItem="oul-Bg-rj7" secondAttribute="trailing" constant="5" id="Y7e-lG-8kg"/>
                                 </constraints>
                             </view>
                         </subviews>

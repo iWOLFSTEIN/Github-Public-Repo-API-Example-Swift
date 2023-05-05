@@ -64,6 +64,13 @@ class TableViewCell: UITableViewCell {
         
         let pathImageView = subContainerRight.subviews[2] as! UIImageView
         pathImageView.image = pathSvg?.uiImage
+        
+        
+        let starsCountLabel = subContainerLeft.subviews[1] as! UILabel
+        starsCountLabel.text = "\(String(Int.random(in: 100..<1000))) today"
+        
+        let contributorCountLabel = subContainerRight.subviews[1] as! UILabel
+        contributorCountLabel.text = "\(String(Int.random(in: 100..<1000))) Contributors"
     }
     
 }
