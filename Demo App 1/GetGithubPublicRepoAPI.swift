@@ -16,8 +16,7 @@ struct Repo {
 let programmingLanguages: [String] = ["Python", "Java", "C/C++", "Dart", "Ruby", "Javascript", "Perl"]
 
 class GetGithubPublicRepoAPI {
-    
-    private var githubAccessToken: String = "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"
+    private var githubAccessToken: String = ""
     
     func getRepositoriesAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
         
