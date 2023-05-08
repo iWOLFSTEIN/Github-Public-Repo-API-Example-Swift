@@ -15,59 +15,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "RepositoyListViewController") as? RepositoyListViewController else {
+            fatalError("Unable to instantiate RepositoyListViewController from storyboard")
+        }
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
     }
-
-    // TODO: Remove commented 
-    
-//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-////        if let windowScene = scene as? UIWindowScene {
-////            let window = UIWindow(windowScene: windowScene)
-////            let vc = ViewController()
-////            let getGithubPublicRepoAPI = GetGithubPublicRepoAPI()
-////
-////            getGithubPublicRepoAPI.getAPI { repoList in
-////                vc.repoList = repoList
-////                print("blah blah blah blah blah blah blah blah blah")
-////                print(repoList.count)
-////                window.rootViewController = UINavigationController(rootViewController: vc)
-////                self.window = window
-////                window.makeKeyAndVisible()
-////            }
-////        }
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let window = UIWindow(windowScene: windowScene)
-//
-//        print("something")
-//        print("something")
-//        print("something")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//
-//        let getGithubPublicRepoAPI = GetGithubPublicRepoAPI()
-//
-////        getGithubPublicRepoAPI.getAPI { repoList in
-////            vc.repoList = repoList
-////            print("blah blah blah blah blah blah blah blah blah")
-////            print(repoList.count)
-////            window.rootViewController = UINavigationController(rootViewController: vc)
-////            self.window = window
-////            window.makeKeyAndVisible()
-////        }
-//
-//
-//        print(try? await getGithubPublicRepoAPI.getAPI())
-//        vc.repoList = try? await getGithubPublicRepoAPI.getAPI()
-//        window.rootViewController = UINavigationController(rootViewController: vc)
-//        self.window = window
-//        window.makeKeyAndVisible()
-//    }
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

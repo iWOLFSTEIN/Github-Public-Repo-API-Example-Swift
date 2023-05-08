@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1226407A2A00F68C004D11B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640792A00F68C004D11B3 /* AppDelegate.swift */; };
 		1226407C2A00F68C004D11B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226407B2A00F68C004D11B3 /* SceneDelegate.swift */; };
-		1226407E2A00F68C004D11B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226407D2A00F68C004D11B3 /* ViewController.swift */; };
+		1226407E2A00F68C004D11B3 /* RepositoyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226407D2A00F68C004D11B3 /* RepositoyListViewController.swift */; };
 		122640812A00F68C004D11B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1226407F2A00F68C004D11B3 /* Main.storyboard */; };
 		122640832A00F68D004D11B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122640822A00F68D004D11B3 /* Assets.xcassets */; };
 		122640862A00F68D004D11B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122640842A00F68D004D11B3 /* LaunchScreen.storyboard */; };
-		122640912A00F77A004D11B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226408F2A00F77A004D11B3 /* TableViewCell.swift */; };
-		122640922A00F77A004D11B3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122640902A00F77A004D11B3 /* TableViewCell.xib */; };
+		122640912A00F77A004D11B3 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226408F2A00F77A004D11B3 /* RepoTableViewCell.swift */; };
+		122640922A00F77A004D11B3 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122640902A00F77A004D11B3 /* RepoTableViewCell.xib */; };
 		122640942A024622004D11B3 /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640932A024622004D11B3 /* SecondaryViewController.swift */; };
 		122640972A029751004D11B3 /* ccm.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640952A029751004D11B3 /* ccm.svg */; };
 		122640982A029751004D11B3 /* cce.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640962A029751004D11B3 /* cce.svg */; };
@@ -33,13 +33,13 @@
 		122640762A00F68C004D11B3 /* Demo App 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo App 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		122640792A00F68C004D11B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1226407B2A00F68C004D11B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1226407D2A00F68C004D11B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1226407D2A00F68C004D11B3 /* RepositoyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyListViewController.swift; sourceTree = "<group>"; };
 		122640802A00F68C004D11B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		122640822A00F68D004D11B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122640852A00F68D004D11B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		122640872A00F68D004D11B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1226408F2A00F77A004D11B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		122640902A00F77A004D11B3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		1226408F2A00F77A004D11B3 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		122640902A00F77A004D11B3 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		122640932A024622004D11B3 /* SecondaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
 		122640952A029751004D11B3 /* ccm.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ccm.svg; path = ../../../../Downloads/ccm.svg; sourceTree = "<group>"; };
 		122640962A029751004D11B3 /* cce.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cce.svg; path = ../../../../Downloads/cce.svg; sourceTree = "<group>"; };
@@ -108,13 +108,13 @@
 				122640952A029751004D11B3 /* ccm.svg */,
 				122640792A00F68C004D11B3 /* AppDelegate.swift */,
 				1226407B2A00F68C004D11B3 /* SceneDelegate.swift */,
-				1226407D2A00F68C004D11B3 /* ViewController.swift */,
+				1226407D2A00F68C004D11B3 /* RepositoyListViewController.swift */,
 				1226407F2A00F68C004D11B3 /* Main.storyboard */,
 				122640822A00F68D004D11B3 /* Assets.xcassets */,
 				122640842A00F68D004D11B3 /* LaunchScreen.storyboard */,
 				122640872A00F68D004D11B3 /* Info.plist */,
-				1226408F2A00F77A004D11B3 /* TableViewCell.swift */,
-				122640902A00F77A004D11B3 /* TableViewCell.xib */,
+				1226408F2A00F77A004D11B3 /* RepoTableViewCell.swift */,
+				122640902A00F77A004D11B3 /* RepoTableViewCell.xib */,
 				122640932A024622004D11B3 /* SecondaryViewController.swift */,
 				122640992A0297B0004D11B3 /* PreferrenceTableViewCell.swift */,
 				1226409A2A0297B0004D11B3 /* PreferrenceTableViewCell.xib */,
@@ -201,7 +201,7 @@
 				122640AB2A03E98E004D11B3 /* path.svg in Resources */,
 				122640972A029751004D11B3 /* ccm.svg in Resources */,
 				122640862A00F68D004D11B3 /* LaunchScreen.storyboard in Resources */,
-				122640922A00F77A004D11B3 /* TableViewCell.xib in Resources */,
+				122640922A00F77A004D11B3 /* RepoTableViewCell.xib in Resources */,
 				1226409C2A0297B0004D11B3 /* PreferrenceTableViewCell.xib in Resources */,
 				122640832A00F68D004D11B3 /* Assets.xcassets in Resources */,
 				122640812A00F68C004D11B3 /* Main.storyboard in Resources */,
@@ -258,8 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1226407E2A00F68C004D11B3 /* ViewController.swift in Sources */,
-				122640912A00F77A004D11B3 /* TableViewCell.swift in Sources */,
+				1226407E2A00F68C004D11B3 /* RepositoyListViewController.swift in Sources */,
+				122640912A00F77A004D11B3 /* RepoTableViewCell.swift in Sources */,
 				1226407A2A00F68C004D11B3 /* AppDelegate.swift in Sources */,
 				1226407C2A00F68C004D11B3 /* SceneDelegate.swift in Sources */,
 				122640942A024622004D11B3 /* SecondaryViewController.swift in Sources */,

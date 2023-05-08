@@ -15,9 +15,9 @@ let programmingLanguages: [String] = ["Python", "Java", "C/C++", "Dart", "Ruby",
 
 class GetGithubPublicRepoAPI {
     
-    private var githubAccessToken: String = "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"
+    private var githubAccessToken: String = "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"
     
-    func getAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
+    func getRepositoriesAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
         
         var repoList: [Repo] = []
         
