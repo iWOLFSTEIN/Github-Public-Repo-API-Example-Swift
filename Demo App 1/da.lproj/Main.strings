@@ -1,0 +1,24 @@
+
+/* Class = "UINavigationItem"; title = "Filters"; ObjectID = "31E-BK-gA3"; */
+"31E-BK-gA3.title" = "Filters";
+
+/* Class = "UIButton"; configuration.title = "Clear"; ObjectID = "8Mi-KA-TkI"; */
+"8Mi-KA-TkI.configuration.title" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8Mi-KA-TkI"; */
+"8Mi-KA-TkI.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Appy"; ObjectID = "EEG-3G-3R4"; */
+"EEG-3G-3R4.configuration.title" = "Appy";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EEG-3G-3R4"; */
+"EEG-3G-3R4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Explore"; ObjectID = "MzN-yb-HhP"; */
+"MzN-yb-HhP.text" = "Explore";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "SCD-dQ-T4N"; */
+"SCD-dQ-T4N.text" = "Languages";
+
+/* Class = "UILabel"; text = "Filters"; ObjectID = "Xux-HB-xbO"; */
+"Xux-HB-xbO.text" = "Filters";

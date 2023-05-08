@@ -5,32 +5,42 @@
 //  Created by BrainX Technologies on 02/05/2023.
 //
 
+//TODO: imports should be in alphabetical order
+
 import UIKit
 import SVGKit
 import Alamofire
 import Kingfisher
 
+// TODO: Give a specific for controller that defines what does it do
+// RepositoyListViewController
 class ViewController: UIViewController {
-    
+
+    // TODO: use decriptive names
+
     @IBOutlet weak var pbuttonImageView: UIImageView!
     @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var activityIndicatorView: UIView?
-    
-    var repoList: [Repo]!
+
+    private var numberOfAvailableLanguages = 7
+
+    // TODO: Dont use force unwrapping
+
+    var repoList: [Repo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // Create a new instance of UINavigationController with self as the root view controller
-        
-          let navController = UINavigationController(rootViewController: self)
-          if let window = UIApplication.shared.windows.first {
+
+        // TODO: Move this to scene delegate
+        let navController = UINavigationController(rootViewController: self)
+        if let window = UIApplication.shared.windows.first {
             window.rootViewController = navController
             window.makeKeyAndVisible()
-          }
+        }
         
         
         let api = GetGithubPublicRepoAPI()
@@ -46,29 +56,26 @@ class ViewController: UIViewController {
         
         let textField = textFieldView.subviews.first as! UITextField
         textField.borderStyle = .none
+        // TODO: Save colors in Assets
         textField.backgroundColor = UIColor(red: 243/255, green: 244/255, blue: 246/255, alpha: 1.0)
-        textField.placeholder = "Search..."
-        
-        
-        
+        // TODO: Save strings in localizable files
+        textField.placeholder = NSLocalizedString("search", comment: "")
+
+
+        // TODO: Use extensions to shorten method calls
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 300
         tableView.separatorStyle = .none
-        
-        
-        
-        
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-    pbuttonImageView.isUserInteractionEnabled = true
-    pbuttonImageView.addGestureRecognizer(tapGesture)
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        pbuttonImageView.isUserInteractionEnabled = true
+        pbuttonImageView.addGestureRecognizer(tapGesture)
 
-        
         textFieldView.layer.cornerRadius = 10
 
-        
+        // TODO: Remove commented code
 //        NSLayoutConstraint.activate([
 //            searchBarView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.155),
 //            tableView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.845),
@@ -76,6 +83,15 @@ class ViewController: UIViewController {
 //        ])
         
     }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar
+        navigationController?.navigationBar.isHidden = true
+    }
+
     
     func showActivityIndicator() {
         activityIndicatorView = UIView(frame: self.view.bounds)
@@ -93,24 +109,19 @@ class ViewController: UIViewController {
     }
 
 
-    
+    // TODO: Be more specific. Which view is tapped?
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
-                    navigationController?.pushViewController(destinationVC, animated: true)
-        
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        navigationController?.pushViewController(destinationVC, animated: true)
 
-        // Hide the navigation bar
-        navigationController?.navigationBar.isHidden = true
     }
-
 
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+// TODO: Conform to each protocol in a different extension
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if let repoList {
@@ -127,27 +138,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        if let repoList {
-            let repo: Repo = repoList[indexPath.section]
-            let profilePicImageView = cell.profilePicView.subviews.first as! UIImageView
-            
-            
-            let imageUrl = URL(string: repo.avatar_url)!
-            let resource = ImageResource(downloadURL: imageUrl)
-            profilePicImageView.kf.indicatorType = .activity
-            profilePicImageView.kf.setImage(with: resource)
-            profilePicImageView.isUserInteractionEnabled = false
-            
-            
-            cell.nameLabel.text = repo.name
-            
-            
-            let programmingLanguageLabel = cell.programmingLangView.subviews.first as! UILabel
-            programmingLanguageLabel.text = programmingLanguages[Int.random(in: 0..<7)]
-        }
-        else {
-            print("error is thrown")
-        }
+        let repo: Repo = repoList[indexPath.section]
+
+        // TODO: Remove force casting
+        let profilePicImageView = cell.profilePicView.subviews.first as! UIImageView
+
+        // TODO: Remove force unwrapping. Use guard
+
+        let imageUrl = URL(string: repo.avatar_url)!
+        let resource = ImageResource(downloadURL: imageUrl)
+        profilePicImageView.kf.indicatorType = .activity
+        profilePicImageView.kf.setImage(with: resource)
+        profilePicImageView.isUserInteractionEnabled = false
+
+        cell.nameLabel.text = repo.name
+
+
+        let programmingLanguageLabel = cell.programmingLangView.subviews.first as! UILabel
+        // TODO: Dont use magic numbers
+        programmingLanguageLabel.text = programmingLanguages[Int.random(in: 0..<7)]
         return cell
     }
 

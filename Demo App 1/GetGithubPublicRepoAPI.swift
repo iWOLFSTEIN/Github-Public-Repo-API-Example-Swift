@@ -17,7 +17,6 @@ class GetGithubPublicRepoAPI {
     
     private var githubAccessToken: String = "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"
     
-    
     func getAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
         
         var repoList: [Repo] = []

@@ -8,6 +8,7 @@
 import UIKit
 import SVGKit
 
+// TODO: Update name
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,6 +19,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var topView: UIView!
+
+    // TODO: Remove if not overriding
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +31,7 @@ class TableViewCell: UITableViewCell {
 
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.borderWidth = 1
+        // TODO: Use assets
         self.contentView.layer.borderColor = CGColor(red: 199/255, green: 199/255, blue: 202/255, alpha: 1.0)
         // Configure the view for the selected state
 //        self.contentView.subviews.first!.layer.cornerRadius = 10

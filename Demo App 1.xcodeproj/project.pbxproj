@@ -25,6 +25,7 @@
 		122640AA2A03E98E004D11B3 /* star.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640A72A03E98E004D11B3 /* star.svg */; };
 		122640AB2A03E98E004D11B3 /* path.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640A82A03E98E004D11B3 /* path.svg */; };
 		122640AD2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */; };
+		18EA8BA72A0900490053B35A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EA8BA92A0900490053B35A /* Localizable.strings */; };
 		A399B8EB933C7551076A8E3E /* Pods_Demo_App_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522BA336A19AFF2133227EC6 /* Pods_Demo_App_1.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,10 @@
 		122640A72A03E98E004D11B3 /* star.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = star.svg; path = ../../../../Downloads/star.svg; sourceTree = "<group>"; };
 		122640A82A03E98E004D11B3 /* path.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = path.svg; path = ../../../../Downloads/path.svg; sourceTree = "<group>"; };
 		122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGithubPublicRepoAPI.swift; sourceTree = "<group>"; };
+		18EA8BA82A0900490053B35A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18EA8BAA2A09007D0053B35A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Main.strings; sourceTree = "<group>"; };
+		18EA8BAB2A09007D0053B35A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18EA8BAC2A09007D0053B35A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		522BA336A19AFF2133227EC6 /* Pods_Demo_App_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_App_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E09D4659C9079F94BCA975 /* Pods-Demo App 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo App 1.debug.xcconfig"; path = "Target Support Files/Pods-Demo App 1/Pods-Demo App 1.debug.xcconfig"; sourceTree = "<group>"; };
 		DFCF4145487E57043C644143 /* Pods-Demo App 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo App 1.release.xcconfig"; path = "Target Support Files/Pods-Demo App 1/Pods-Demo App 1.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 				122640992A0297B0004D11B3 /* PreferrenceTableViewCell.swift */,
 				1226409A2A0297B0004D11B3 /* PreferrenceTableViewCell.xib */,
 				122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */,
+				18EA8BA92A0900490053B35A /* Localizable.strings */,
 			);
 			path = "Demo App 1";
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			knownRegions = (
 				en,
 				Base,
+				da,
 			);
 			mainGroup = 1226406D2A00F68B004D11B3;
 			productRefGroup = 122640772A00F68C004D11B3 /* Products */;
@@ -188,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				122640982A029751004D11B3 /* cce.svg in Resources */,
+				18EA8BA72A0900490053B35A /* Localizable.strings in Resources */,
 				122640A12A03847A004D11B3 /* cross.svg in Resources */,
 				122640AA2A03E98E004D11B3 /* star.svg in Resources */,
 				122640AB2A03E98E004D11B3 /* path.svg in Resources */,
@@ -267,6 +275,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				122640802A00F68C004D11B3 /* Base */,
+				18EA8BAA2A09007D0053B35A /* da */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -275,8 +284,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				122640852A00F68D004D11B3 /* Base */,
+				18EA8BAB2A09007D0053B35A /* da */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18EA8BA92A0900490053B35A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18EA8BA82A0900490053B35A /* en */,
+				18EA8BAC2A09007D0053B35A /* da */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -286,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -346,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
