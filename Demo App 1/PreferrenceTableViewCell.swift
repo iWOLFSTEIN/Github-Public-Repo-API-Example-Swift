@@ -13,15 +13,14 @@ class PreferrenceTableViewCell: UITableViewCell {
     @IBOutlet weak var checkBoxImage: UIImageView!
     
     var isChecked: Bool = false
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+extension PreferrenceTableViewCell{
+    static var nibName: String {
+        return String(String(describing: self))
     }
     
+    static var reusableCellIdentifier: String {
+        return String(String(describing: self))
+    }
 }

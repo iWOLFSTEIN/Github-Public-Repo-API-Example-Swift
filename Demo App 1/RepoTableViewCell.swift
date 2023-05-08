@@ -5,8 +5,8 @@
 //  Created by BrainX Technologies on 02/05/2023.
 //
 
-import UIKit
 import SVGKit
+import UIKit
 
 class RepoTableViewCell: UITableViewCell {
     

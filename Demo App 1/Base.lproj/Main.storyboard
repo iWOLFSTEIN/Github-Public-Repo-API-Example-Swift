@@ -117,7 +117,7 @@
         <!--Filters-->
         <scene sceneID="jOO-Qa-6Mv">
             <objects>
-                <viewController storyboardIdentifier="SecondaryViewController" id="Qd5-fx-lOd" customClass="SecondaryViewController" customModule="Demo_App_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferrenceViewController" id="Qd5-fx-lOd" customClass="PreferrenceViewController" customModule="Demo_App_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahP-xP-20E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,6 +261,7 @@
                         <outlet property="clearButtonView" destination="hQx-29-Ih1" id="EBn-rZ-Hxl"/>
                         <outlet property="crossButtonImageView" destination="tOE-Qq-v1E" id="yV6-yx-OLo"/>
                         <outlet property="headView" destination="F8E-SB-8xO" id="9c0-C4-A24"/>
+                        <outlet property="tableView" destination="0fE-eW-cws" id="MfE-h6-KBN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-Tg-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

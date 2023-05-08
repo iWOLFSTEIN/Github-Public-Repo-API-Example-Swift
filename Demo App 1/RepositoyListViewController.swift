@@ -64,7 +64,7 @@ class RepositoyListViewController: UIViewController {
     
     @objc func handlePreferrenceButtonTap(_ gesture: UITapGestureRecognizer) {
         
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "PreferrenceViewController") as! PreferrenceViewController
         navigationController?.pushViewController(destinationVC, animated: true)
         
     }
