@@ -25,6 +25,8 @@
 		122640AA2A03E98E004D11B3 /* star.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640A72A03E98E004D11B3 /* star.svg */; };
 		122640AB2A03E98E004D11B3 /* path.svg in Resources */ = {isa = PBXBuildFile; fileRef = 122640A82A03E98E004D11B3 /* path.svg */; };
 		122640AD2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */; };
+		122640B12A0A4CC4004D11B3 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640B02A0A4CC4004D11B3 /* RepositoryListViewModel.swift */; };
+		122640B32A0A5535004D11B3 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122640B22A0A5535004D11B3 /* RepositoryModel.swift */; };
 		18EA8BA72A0900490053B35A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EA8BA92A0900490053B35A /* Localizable.strings */; };
 		A399B8EB933C7551076A8E3E /* Pods_Demo_App_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522BA336A19AFF2133227EC6 /* Pods_Demo_App_1.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		122640A72A03E98E004D11B3 /* star.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = star.svg; path = ../../../../Downloads/star.svg; sourceTree = "<group>"; };
 		122640A82A03E98E004D11B3 /* path.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = path.svg; path = ../../../../Downloads/path.svg; sourceTree = "<group>"; };
 		122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGithubPublicRepoAPI.swift; sourceTree = "<group>"; };
+		122640B02A0A4CC4004D11B3 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
+		122640B22A0A5535004D11B3 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		18EA8BA82A0900490053B35A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18EA8BAA2A09007D0053B35A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Main.strings; sourceTree = "<group>"; };
 		18EA8BAB2A09007D0053B35A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				1226409A2A0297B0004D11B3 /* PreferrenceTableViewCell.xib */,
 				122640AC2A04DD12004D11B3 /* GetGithubPublicRepoAPI.swift */,
 				18EA8BA92A0900490053B35A /* Localizable.strings */,
+				122640B02A0A4CC4004D11B3 /* RepositoryListViewModel.swift */,
+				122640B22A0A5535004D11B3 /* RepositoryModel.swift */,
 			);
 			path = "Demo App 1";
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122640B12A0A4CC4004D11B3 /* RepositoryListViewModel.swift in Sources */,
 				1226407E2A00F68C004D11B3 /* RepositoyListViewController.swift in Sources */,
 				122640912A00F77A004D11B3 /* RepoTableViewCell.swift in Sources */,
+				122640B32A0A5535004D11B3 /* RepositoryModel.swift in Sources */,
 				1226407A2A00F68C004D11B3 /* AppDelegate.swift in Sources */,
 				1226407C2A00F68C004D11B3 /* SceneDelegate.swift in Sources */,
 				122640942A024622004D11B3 /* PreferrenceViewController.swift in Sources */,

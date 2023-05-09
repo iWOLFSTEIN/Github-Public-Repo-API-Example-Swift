@@ -34,7 +34,6 @@ class RepoTableViewCell: UITableViewCell {
         
         profilePicView.layer.cornerRadius = 10
         profilePicUIImage.layer.cornerRadius = 10
-        
         subContainerLeft.layer.cornerRadius = 10
         subContainerRight.layer.cornerRadius = 10
         programmingLangView.layer.cornerRadius = 5

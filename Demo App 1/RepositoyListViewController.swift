@@ -20,6 +20,7 @@ class RepositoyListViewController: UIViewController {
     var activityIndicatorView: UIView?
     
     private var numberOfAvailableLanguages = 7
+    private var repositoryListViewModel: RepositoryListViewModel!
     
     var repoList: [Repo] = []
     
@@ -27,15 +28,16 @@ class RepositoyListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let api = GetGithubPublicRepoAPI()
-        showActivityIndicator()
-        api.getRepositoriesAPI { [weak self] repositories in
-            self?.repoList = repositories
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-                self?.hideActivityIndicator()
-            }
-        }
+        callRepositoryViewModelForUpdation()
+//        let api = GetGithubPublicRepoAPI()
+//        showActivityIndicator()
+//        api.getRepositoriesAPI { [weak self] repositories in
+//            self?.repoList = repositories
+//            DispatchQueue.main.async {
+//                self?.tableView.reloadData()
+//                self?.hideActivityIndicator()
+//            }
+//        }
         
         let textField = textFieldView.subviews.first as! UITextField
         textField.borderStyle = .none
@@ -60,6 +62,18 @@ class RepositoyListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func callRepositoryViewModelForUpdation() {
+        self.repositoryListViewModel = RepositoryListViewModel()
+        showActivityIndicator()
+        self.repositoryListViewModel.bindRepoViewModelToRepoView = {
+            self.repoList = self.repositoryListViewModel.repoList
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.hideActivityIndicator()
+            }
+        }
     }
     
     @objc func handlePreferrenceButtonTap(_ gesture: UITapGestureRecognizer) {
@@ -111,6 +125,7 @@ extension RepositoyListViewController: UITableViewDelegate {
         
         cell.nameLabel.text = repo.name
         
+        let programmingLanguages: [String] = ["Python", "Java", "C/C++", "Dart", "Ruby", "Javascript", "Perl"]
         let programmingLanguageLabel = cell.programmingLangView.subviews.first as! UILabel
         programmingLanguageLabel.text = programmingLanguages[Int.random(in: 0..<numberOfAvailableLanguages)]
         return cell

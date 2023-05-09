@@ -8,15 +8,8 @@
 import Alamofire
 import Foundation
 
-struct Repo {
-    var name: String
-    var avatar_url: String
-}
-
-let programmingLanguages: [String] = ["Python", "Java", "C/C++", "Dart", "Ruby", "Javascript", "Perl"]
-
 class GetGithubPublicRepoAPI {
-    private var githubAccessToken: String = ""
+    private var githubAccessToken: String = "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"
     
     func getRepositoriesAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
         
