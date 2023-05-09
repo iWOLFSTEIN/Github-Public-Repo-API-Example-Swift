@@ -29,15 +29,6 @@ class RepositoyListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         callRepositoryViewModelForUpdation()
-//        let api = GetGithubPublicRepoAPI()
-//        showActivityIndicator()
-//        api.getRepositoriesAPI { [weak self] repositories in
-//            self?.repoList = repositories
-//            DispatchQueue.main.async {
-//                self?.tableView.reloadData()
-//                self?.hideActivityIndicator()
-//            }
-//        }
         
         let textField = textFieldView.subviews.first as! UITextField
         textField.borderStyle = .none
