@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 class GetGithubPublicRepoAPI {
-    private var githubAccessToken: String = "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"
+    private var githubAccessToken: String = ""
     
     func getRepositoriesAPI(completion: @escaping ([Repo]) -> Void) -> [Repo]{
         
